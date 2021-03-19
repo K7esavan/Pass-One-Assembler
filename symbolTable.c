@@ -44,24 +44,34 @@ void insertToHashTable(
         /* Creting new Symbol */
         Symbol *newSymbol = (Symbol*) malloc (1 * sizeof(Symbol));
 
+        /* copy the values to it */
+        newSymbol->address = addressOfSymbol;
+        strcpy(newSymbol->name, nameOfSymbol);
+        strcpy(newSymbol->type, typeOfSymbol);
+        newSymbol->size = sizeOfSymbol;
+        newSymbol->next = NULL;
+
         /* finding exact position to include it on hashtable */
         int position = hashFunction(nameOfSymbol[0]);
 
         /* If that position is empty */
         if (myHashTable->chain[position] == NULL) {
             myHashTable->chain[position] = newSymbol;
+            myHashTable->number_of_symbols++;
+            return;
 
         } else {
 
             /* That position is not empty so traverse through that particular list */
             list lp = myHashTable->chain[position];
-            while(lp != NULL) {
+            while(lp->next != NULL) {
 
                 lp = lp->next;
             }
 
             /* got the right place to insert, insert it */
-            lp = newSymbol;
+            lp->next = newSymbol;
+            myHashTable->number_of_symbols++;
         }
 
     } else {
