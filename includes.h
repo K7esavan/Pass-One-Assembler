@@ -5,4 +5,4 @@
 
 #define ERR "\033[31;1m"
 #define error(message) printf("%s %s %s\n", ERR, message, ERR);
-
+#define newline printf("\n")

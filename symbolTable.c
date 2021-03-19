@@ -59,3 +59,22 @@ void insertToHashTable(
         error("Invalid Name for the Symbol in inserting to hash Table ");
     }
 }
+
+void displayHashTable(HashTable myHashTable) {
+
+    int iterator = 0;
+    list lp = NULL;
+
+    /* We need to display all the 26 positions values */
+    for(; iterator<26; iterator++) {
+        lp = myHashTable->chain[iterator];
+
+        /* so that we don't get empty spaces while printing */
+        if (lp != NULL) newline;
+
+        while(lp != NULL) {
+            printf("%s ", lp->name);
+            lp = lp->next;
+        }
+    }
+} //end of display function
