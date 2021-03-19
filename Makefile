@@ -29,3 +29,14 @@ clean:
 
 run:
 	./output
+
+details:
+	@echo " +------------------------------------------------------------------+"
+	@echo " |\033[32mThis is Pass 1 assembler written for SIC Architecture             \033[0m|"
+	@echo " |------------------------------------------------------------------|"
+	@echo " |This program parses the input SIC program and if it identifies    |"
+	@echo " |Symbol, made an entry to the symbol table, if identifies error    |"
+	@echo " |Writes that error along with error number line in ERROR_TEXT file |"
+	@echo " |The program requires to know opcode informations so an opcode file|"
+	@echo " |is provided along with it.                                        |"
+	@echo " +------------------------------------------------------------------+"
