@@ -19,6 +19,16 @@ HashTable init() {
     return allocatedHashTable;
 }
 
+int hashFunction(char firstLetter) {
+    if (firstLetter >= 'a' && firstLetter <= 'z')
+        return firstLetter - 'a';
+    else if (firstLetter >= 'A' && firstLetter <= 'Z')
+        return firstLetter - 'A';
+    else {
+        error("Error: \033[0mInvalid name\033[0m");
+        return -1;
+    }
+}
 
 void insertToHashTable(
         const HashTable myHashTable,
