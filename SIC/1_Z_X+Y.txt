@@ -1,0 +1,8 @@
+///////Z=X+Y
+
+		LDA		X
+		ADD		Y
+		STA		Z
+	X	RESW	1
+	Y	RESW	1
+	Z	RESW	1

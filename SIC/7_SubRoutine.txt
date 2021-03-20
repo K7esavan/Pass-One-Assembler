@@ -1,0 +1,36 @@
+			
+			JSUB ReadNo
+			STA Var1
+			JSUB ReadNo				cin>>var1;
+			STA  Var2				cin>>var2;
+			LDA  Var1				var3=var1+var2;
+			ADD  Var2
+			STA	 Var3
+			JMP		exit
+			
+	ReadNo	TD	INDEV
+			JEQ	ReadNo
+			RD	INDEV
+			RSUB
+	exit	........
+	INDEV	WORD	'F1'
+	Var1
+
+
+
+
+
+			JSUB	copy
+			
+			
+	copy	LDX		ZERO
+	loop	LDA		STR1,X   A=STR1[x]
+			STA		STR2,X   STR2[X]=A 
+			TIX		TEN
+			JLT		loop
+			RSUB
+			
+	ZERO	WORD	0
+	TEN		WORD	10
+	STR1	BYTE	'Mepco Engg'
+	STR2	RESB	10

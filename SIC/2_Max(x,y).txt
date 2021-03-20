@@ -1,0 +1,27 @@
+//// Z=max(X,Y)
+
+		LDA		X
+		COMP	Y
+		JGT		label1
+		LDA		Y
+		STA		Z
+		JMP		label_exit
+label1	STA		Z
+label_exit .... .... 
+	X	RESW	1
+	Y	RESW	1
+	Z	RESW	1
+	
+	
+	Solution 2
+//// Z=max(X,Y)
+
+		LDA		X
+		COMP	Y
+		JGT		label1
+		LDA		Y
+label1	STA		Z
+	X	RESW	1
+	Y	RESW	1
+	Z	RESW	1
+	

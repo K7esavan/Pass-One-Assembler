@@ -1,0 +1,18 @@
+// Array Inititialization
+/*
+int a[10];
+for(i=0;i<10;i++)
+	a[i]=5;
+*/
+
+				LDX		ZERO
+loop_index		LDA		FIVE
+				STA		ARRAY,X
+				TIX		TEN
+				JLT		loop_index
+		ZERO	WORD	0
+		ARRAY	RESW	10
+		FIVE	WORD	5
+		TEN		WORD	10
+				
+		

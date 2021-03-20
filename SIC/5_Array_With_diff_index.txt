@@ -1,0 +1,25 @@
+int a[10]={1,2,3..10};
+int b[10];
+for(i=0;i<10;i=i+3)
+{
+	a[i]=b[i];
+}
+TIX TWENTY
+TIX TWENTY
+TIX TWENTY
+
+			LDA			ZERO
+	Loop	STA			INDEX
+			LDX			INDEX
+			LDA			Array_A,X     A=Array_A[x]
+			STA			Array_B,X     Array_B[x]=A
+			LDA			INDEX
+			ADD			THREE
+			COMP		TWENTY
+			JLT		Loop			
+	THREE	WORD	3
+	ZERO	WORD	0
+	Array_A	WORD	{1,2,3,4,....,10} // we have 20 elememnts in
+	Array_B	RESW	20
+	TWENTY	WORD	20
+	INDEX	RESW	1

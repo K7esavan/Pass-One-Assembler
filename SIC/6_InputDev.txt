@@ -1,0 +1,22 @@
+Read a char from Input device
+
+RLOOP	TD	INDEV
+		JEQ  RLOOP
+		RD	INDEV .... Read a char from INDEV to load in A
+		STA	VAR1
+INDEV	BYTE	'F1'  // F1 is input devi Number
+VAR1	RESB	1
+
+Read a String (length is 5)
+-----------------------------
+		LDX	ZERO
+RLOOP	TD	INDEV
+		JEQ  RLOOP
+		RD	INDEV
+		STA	STR,X
+		TIX FIVE
+		JLT	RLOOP
+INDEV	BYTE	'F1'
+STR		RESB	5
+ZERO	WORD	0
+FIVE	WORD	5	

@@ -1,0 +1,13 @@
+
+
+// Copy STring
+
+		LDX		ZERO
+CLabel	LDCH	STR1,X  ..load str1[x] to A
+		STCH	STR2,X   ..  store A to STR2[x]
+		TIX		TEN
+		JLT		CLabel
+ZERO	WORD	0
+STR1	BYTE	'Mepco Engg' ... 10 BYTEs
+STR2	RESB	10
+TEN		WORD	10
